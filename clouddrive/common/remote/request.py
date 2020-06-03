@@ -125,6 +125,8 @@ class Request(object):
             try:
                 Logger.debug(request_report)
                 req = urllib2.Request(self.url, self.data, self.headers)
+                if self.method == 'delete':
+                    req.get_method = lambda: 'DELETE'
                 response = urllib2.urlopen(req)
                 self.response_code = response.getcode()
                 self.response_info = response.info()
