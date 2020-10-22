@@ -1,0 +1,5 @@
+image: lasery/gitpod-workspace-full:latest
+
+tasks:
+  - command: |
+      alias tmux="tmux -2"
